@@ -1,6 +1,7 @@
 # Progetto Python: Simulazione di Protocollo di Routing
 
-### Lisa Vandi, Kevin Shimaj, a.a. 2024/2025
+### Lisa Vandi, Kevin Shimaj
+### Reti di Telecomunicazione, a.a. 2024/2025
 
 Creare uno script Python che simuli un protocollo di routing semplice, come il Distance Vector Routing. Gli studenti implementeranno gli aggiornamenti di routing tra i nodi, con il calcolo delle rotte più brevi.
 
