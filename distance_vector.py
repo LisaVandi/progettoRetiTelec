@@ -36,3 +36,39 @@ def aggiorna_tabella(nodo):
                 tabelle_routing[nodo][destinazione] = (nuovo_costo, vicino)
                 cambiato = True
     return cambiato
+
+def esegui_protocollo(num_iterazioni=5):
+    """
+    Esegue il protocollo di routing per un massimo di num_iterazioni.
+    Si ferma anticipatamente se non ci sono più cambiamenti.
+    """
+    for iterazione in range(num_iterazioni):
+        print(f"\nIterazione {iterazione + 1}:")
+        cambiamenti = any(aggiorna_tabella(nodo) for nodo in rete)
+        if not cambiamenti:  # Se non ci sono stati cambiamenti, interrompe il ciclo
+            print("Convergenza raggiunta!")
+            break
+        mostra_tabelle_routing(intermedio=True)
+
+
+def mostra_tabelle_routing(intermedio=False):
+    """
+    Stampa le tabelle di routing in formato leggibile per ciascun nodo.
+    """
+    titolo = "Tabelle di routing intermedie" if intermedio else "Tabelle di routing finali"
+    print(f"\n{titolo}:\n")
+    for nodo, tabella in tabelle_routing.items():
+        dati = [
+            [destinazione, costo, next_hop if next_hop is not None else "None"]
+            for destinazione, (costo, next_hop) in tabella.items()
+        ]
+        print(f"Tabella di Routing per {nodo}:")
+        print(tabulate(dati, headers=["Destinazione", "Costo", "Next Hop"], tablefmt="grid"))
+        print()
+
+
+# Esecuzione del protocollo di routing
+if __name__ == "__main__":
+    print("Esecuzione del protocollo Distance Vector...")
+    esegui_protocollo(num_iterazioni=5)
+    mostra_tabelle_routing()
