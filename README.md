@@ -8,3 +8,8 @@ Creare uno script Python che simuli un protocollo di routing semplice, come il D
 Implementare la logica di aggiornamento delle rotte, gestione delle tabelle di routing e calcolo delle distanze tra nodi.
  
 Codice Python ben documentato, output delle tabelle di routing per ogni nodo e relazione finale che spieghi il funzionamento dello script.
+
+## Esecuzione dello script
+Per eseguire lo script distance_vector.py è necessario: 
+- installare la libreria tabulate con il seguente comando:  pip install tabulate
+- eseguire lo script con il seguente comando:  python distance_vector.py 
