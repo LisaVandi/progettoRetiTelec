@@ -1,8 +1,9 @@
 """
-Implementazione semplificata di un protocollo di routing basato su Distance Vector.
+Implementazione di un protocollo di routing basato su Distance Vector.
 """
+from tabulate import tabulate 
 
-# Rete semplificata
+# Definizione della rete
 rete = {
     "A": {"B": 1, "C": 4},
     "B": {"A": 1, "C": 2, "D": 5},
